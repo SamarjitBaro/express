@@ -29,24 +29,24 @@ app.get("/error", function (req, res, next) {
 app.get("/create", function (req, res, next) {
   req.session.polo = true;
   res.send("done");
-  next();
+  // next();
 });
 app.get("/check", function (req, res, next) {
   console.log(req.session.polo);
-  next();
+  // next();
 });
 
 app.get("/about", function (req, res, next) {
   res.send("about Page");
-  next();
+  // next();
 });
-app.get("/profile", function (req, res, next) {
-  res.send("Profile Page");
-  next();
+app.get("/profile/:username/:age", function (req, res, next) {
+  res.send(req.params.username + " Age is " + req.params.age);
+  // next();
 });
 app.get("*", function (req, res, next) {
   res.send("Error, Site doesnt exist");
-  next();
+  // next();
 });
 
 app.listen(3000);
