@@ -41,7 +41,8 @@ app.get("/about", function (req, res, next) {
   // next();
 });
 app.get("/profile/:username/:age", function (req, res, next) {
-  res.send(req.params.username + " Age is " + req.params.age);
+  // res.send(req.params.username + " Age is " + req.params.age);
+  res.send(` Name is ${req.params.username} and age is ${req.params.age}`);
   // next();
 });
 app.get("*", function (req, res, next) {
